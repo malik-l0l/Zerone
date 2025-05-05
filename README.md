@@ -1,6 +1,10 @@
 # ⚡ Zerone - 01: Where Digital Circuits Come to Life
 
+
 > *"In the binary world of 0s and 1s, we found our purpose: to transform complex digital logic into beautiful clarity."*
+
+→ Step into the circuit: [Zerone is live](https://malik-l0l.github.io/Zerone)
+
 
 ## 🌟 Our Origin Story
 
@@ -20,7 +24,8 @@ Thus, Zerone was born—a digital sanctuary where complex circuit theories trans
 | 🔌     | Muhammed Aman | The Connection Maker    |
 | 🌈     | Shreya Baiju  | The Experience Designer |
 
-.
+* ❤️ Thanks to [MilllerTime](https://github.com/MilllerTime) for the digital lab playground.
+
 
 ## 🚀 What We've Built
 
