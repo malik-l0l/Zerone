@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Zerone - 01</title>
+    <meta name="title" content="Zerone - 01">
+    <meta name="description" content="Explore digital circuit design with Zerone's interactive experiments. Learn about logic gates, adders, flip-flops, and more through our comprehensive digital lab resources.">
+    <meta name="keywords" content="digital circuits, logic gates, electronics lab, circuit design, digital experiments, adders, flip-flops">
+    <meta name="author" content="Zerone Team | CSD GECK 22-26">
+    
+    <!-- Performance & Resource Hints -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a class="logo" href="#">
+                <span class="logo-logo">01</span>
+                <span class="logo-text">Zerone</span>
+            </a>
+            <button class="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
+                &#9776;
+            </button>
+            <nav class="nav">
+                <a class="nav-link" href="#home">Home</a>
+                <a class="nav-link" href="#cards">Experiments</a>
+                <a class="nav-link" href="#about">About</a>
+                <a class="nav-github" href="https://github.com/malik-l0l/Zerone" target="_blank" title="Malik's Repository">
+                    <svg class="github-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
+                    </svg>
+                    <span class="github-text">GitHub</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <h1 class="hero-title"><span style="font-weight: 600;">Build Your Circuits <br
+                            class="hidden-lg">Faster!</span></h1>
+                <p class="hero-description">Unlock your creativity and efficiency in circuit design by exploring our
+                    Digital Lab webpage! Dive into a treasure trove of exciting experiments that will elevate your
+                    skills. This website is your one-stop resource for everything you need to document your findings and
+                    insights in the Digital Lab record.</p>
+                <div class="hero-buttons">
+                    <button class="button-primary" onclick="window.location.href='#cards'">Let's Explore</button>
+                    <!-- <button class="button-secondary">Learn More</button> -->
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://corporate.skroutz.gr/wp-content/uploads/science-1-600x400.png" alt="Hero Image"
+                    class="image">
+            </div>
+        </div>
+    </section>
+
+    <section class="exp-slider" id="cards">
+        <div class="team-section " style="text-align: center;">
+            <h2 class="title">Explore</h2>
+            <p class="subtitle" style="text-align: center;">
+                Explore these digital lab experiments, thoughtfully designed to deepen your understanding of key
+                scientific concepts.
+            </p>
+        </div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+
+                <!-- Card Slide 1 -->
+                <div class="swiper-slide">
+                    <article class="card">
+                        <figure class="card-image">
+                            <img src="./assets/explore/eg0.jpeg" alt="ARENA-101 Placeholder Image">
+                        </figure>
+                        <div class="card-header">
+                            <!-- <a href="#">DIGITAL LAB PLAYGROUND</a> -->
+                        </div>
+                        <div class="card-footer">
+                            <div>Nov 28, 2024</div>
+                            <a href="./exp/digital_arena.html" class="explore-button">Explore</a>
+                            <!-- Link instead of button -->
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Card Slide 2 -->
+                <div class="swiper-slide">
+                    <article class="card">
+                        <figure class="card-image">
+                            <img src="./assets/explore/eg2.jpeg" alt="EXP-1">
+                        </figure>
+                        <div class="card-header">
+                            <!-- <a href="#">REALIZATION OF FUNCTIONS BASIC GATES</a> -->
+                        </div>
+                        <div class="card-footer">
+                            <div>Nov 29, 2024</div>
+                            <a href="./exp/exp1.html" class="explore-button">Explore</a> <!-- Link instead of button -->
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Card Slide 3 -->
+                <div class="swiper-slide">
+                    <article class="card">
+                        <figure class="card-image">
+                            <img src="./assets/explore/eg3.jpeg" alt="EXP-2">
+                        </figure>
+                        <div class="card-header">
+                            <!-- <a href="#">HALF AND FULL ADDER</a> -->
+                        </div>
+                        <div class="card-footer">
+                            <div>Dec 16, 2024</div>
+                            <a href="./exp/exp2.html" class="explore-button">Explore</a> <!-- Link instead of button -->
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Card Slide 4 -->
+                <div class="swiper-slide">
+                    <article class="card">
+                        <figure class="card-image">
+                            <img src="./assets/explore/eg4.jpeg" alt="EXP-3">
+                        </figure>
+                        <div class="card-header">
+                            <!-- <a href="#">Basic gates and flip flop</a> -->
+                        </div>
+                        <div class="card-footer">
+                            <div>Dec 16, 2024</div>
+                            <a href="./exp/exp3.html" class="explore-button">Explore</a> <!-- Link instead of button -->
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section class="team-section" id="about">
+        <div class="team-section header" style="text-align: center;">
+            <h2 class="title">Meet Our Team</h2>
+            <p class="subtitle" style="text-align: center;">
+                We’re a team of dedicated students, passionate about sharing knowledge through creative and meaningful
+                projects.
+            </p>
+        </div>
+        <div class="container team-grid">
+            <div class="team-member">
+                <div class="card">
+                    <img src="./assets/team/saleem.png" alt="Team Member" class="photo">
+                    <div class="card-content">
+                        <h3 class="team-member-name">Saleem Malik</h3>
+                        <p class="team-member-title">Leader</p>
+                    </div>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="card">
+                    <img src="./assets/team/shajila_miss.png" alt="Team Member" class="photo">
+                    <div class="card-content">
+                        <h3 class="team-member-name">Prof. Shajila</h3>
+                        <p class="team-member-title">Co-ordinator</p>
+                    </div>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="card">
+                    <img src="./assets/team/liya.png" alt="Team Member" class="photo">
+                    <div class="card-content">
+                        <h3 class="team-member-name">Liya Fathima</h3>
+                        <p class="team-member-title">Assistant</p>
+                    </div>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="card">
+                    <img src="./assets/team/aman.png" alt="Team Member" class="photo">
+                    <div class="card-content">
+                        <h3 class="team-member-name">Muhammed Aman</h3>
+                        <p class="team-member-title">Assistant</p>
+                    </div>
+                </div>
+            </div>
+            <div class="team-member">
+              <div class="card">
+                  <img src="./assets/team/shreya.png" alt="Team Member" class="photo">
+                  <div class="card-content">
+                      <h3 class="team-member-name">Shreya Baiju</h3>
+                      <p class="team-member-title">Assistant</p>
+                  </div>
+              </div>
+          </div>
+            
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2024 ZerOne. All rights reserved.</p>
+    </footer>
+
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/swiper.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+
+</html>

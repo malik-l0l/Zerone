@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Half and Full Adder & Subtractor Experiment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DynaPuff:wght@400..700&family=Frank+Ruhl+Libre:wght@300..900&family=Orbitron:wght@400..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Tiny5&display=swap');
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #f1f1f1;
+            font-family:monospace;
+            font-weight: 200;
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        #notebook-paper {
+            width: 90%;
+            max-width: 960px;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            padding: 0;
+            border-radius: 5px;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2), 0px 0px 6px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .line-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: linear-gradient(#00b0d7 1px, transparent 1px);
+            background-size: 100% 30px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        #notebook-paper header {
+            position: relative;
+            padding: 30px 40px;
+            background: white;
+            z-index: 2;
+            border-bottom: 1px solid #00b0d7;
+        }
+
+        #notebook-paper header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        #content {
+            position: relative;
+            z-index: 2;
+            padding: 30px 40px;
+            background: linear-gradient(
+                transparent 29px,
+                #00b0d7 29px,
+                #00b0d7 30px,
+                transparent 30px
+            );
+            background-size: 100% 30px;
+            background-position-y: -1px;
+        }
+
+        #content h2,
+        #content p {
+            line-height: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        #content h2 {
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            text-decoration: underline;
+            display: inline-block;
+            padding-right: 10px;
+        }
+
+        .section-spacing {
+            height: 30px;
+            background: transparent !important;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        /* Tab spacing for procedure steps */
+        .indented {
+            padding-left: 40px;
+        }
+
+        #content > * {
+            position: relative;
+            z-index: 3;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 10px; }
+            #notebook-paper { width: 95%; }
+            #notebook-paper header,
+            #content { padding: 30px 20px; }
+            #notebook-paper header h1 { font-size: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            #notebook-paper header,
+            #content { padding: 30px 15px; }
+            #notebook-paper header h1 { font-size: 18px; }
+            .indented { padding-left: 20px; }
+        }
+
+        @media print {
+            body { padding: 0; }
+            #notebook-paper {
+                width: 100%;
+                max-width: none;
+                box-shadow: none;
+            }
+            .line-background {
+                display: block !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            #content { background: none; }
+        }
+    </style>
+</head>
+<body>
+    <div id="notebook-paper">
+        <div class="line-background"></div>
+        <header>
+            <h1>EXPERIMENT NO:3<br><br>CODE CONVERTERS</h1>
+        </header>
+        <div id="content">
+            <h2 class="section-title">AIM:</h2>
+            <p>To design and setup the following circuits:</p>
+            <p>1. A 4-bit Binary to Gray converter</p>
+            <p>2. A 4-bit BCD to Excess-3 converter</p>
+            
+            <div class="section-spacing"></div>
+            <h2 class="section-title">COMPONENTS AND EQUIPMENTS REQUIRED:</h2>
+            <p>IC-7408, IC-7432, IC-7404, IC-7486, IC-Trainer kit</p>
+            
+            <div class="section-spacing"></div>
+            <h2 class="section-title">THEORY:</h2>
+            <p>To convert a Binary number to corresponding Gray code, the following rules are applied:</p>
+            <p>1. The MSB in the Gray code is the same as the corresponding bit in a Binary number.</p>
+            <p>2. Going from left to right, add each adjacent pair of binary digits to get the next Gray code. Discard carries.</p>
+            
+            <div class="section-spacing"></div>
+            <p>As the first step to design a binary to Gray code converter, set up a truth table with binary numbers B3 B2 B1 B0 and corresponding Gray code numbers G3 G2 G1 G0. Set up a circuit realizing the simplified logic expression obtained using K maps for Gs as the number of Bs.</p>
+            
+            <div class="section-spacing"></div>
+            <p>To convert BCD to corresponding Excess-3 code, the following rules are applied:</p>
+            <p>1. Group the Binary digits into sets of 4, then add 0011 to each group. This addition of 0011 to each groups of 4 bits converts BCD into Excess-3 code.</p>
+            <p>2. If the sum of the original binary digit and 0011 exceeds 9, a carry is generated and added to the next group.</p>
+            <p>3. Repeat the process for each group of 4 bits until the entire binary number is converted into Excess-3.</p>
+            
+            <div class="section-spacing"></div>
+            <p>As the first step to design BCD to Excess-3 converter, set up a truth table with BCD numbers A, B, C, D and corresponding Excess-3 as W,X,Y,Z. Set up a circuit realizing the simplified logic expression obtained using K maps.</p>
+            
+            <div class="section-spacing"></div>
+            <h2 class="section-title">PROCEDURE:</h2>
+            <p>1. Place the IC on IC trainer kit</p>
+            <p>2. Convert Vcc and GND to respective pins of IC trainer kit</p>
+            <p>3. Connect the inputs to the input switches provided in the IC trainer kit</p>
+            <p>4. Connect the outputs to the switches of output LEDs</p>
+            <p>5. Apply various combination of inputs according to the truth table and observe condition of LEDs</p>
+            <p>6. Disconnect output from the LEDs and note down the corresponding Multimeter Voltage reading for various combination of inputs</p>
+            
+            <div class="section-spacing"></div>
+            <h2 class="section-title">RESULT:</h2>
+            <p>Binary to Gray Converter and BCD to Excess-3 converter are designed and truth table is verified.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Half and Full Adder & Subtractor Experiment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DynaPuff:wght@400..700&family=Frank+Ruhl+Libre:wght@300..900&family=Orbitron:wght@400..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Tiny5&display=swap');
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #f1f1f1;
+            font-family:monospace;
+            font-weight: 200;
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        #notebook-paper {
+            width: 90%;
+            max-width: 960px;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            padding: 0;
+            border-radius: 5px;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2), 0px 0px 6px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .line-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: linear-gradient(#00b0d7 1px, transparent 1px);
+            background-size: 100% 30px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        #notebook-paper header {
+            position: relative;
+            padding: 30px 40px;
+            background: white;
+            z-index: 2;
+            border-bottom: 1px solid #00b0d7;
+        }
+
+        #notebook-paper header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        #content {
+            position: relative;
+            z-index: 2;
+            padding: 30px 40px;
+            background: linear-gradient(
+                transparent 29px,
+                #00b0d7 29px,
+                #00b0d7 30px,
+                transparent 30px
+            );
+            background-size: 100% 30px;
+            background-position-y: -1px;
+        }
+
+        #content h2,
+        #content p {
+            line-height: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        #content h2 {
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            text-decoration: underline;
+            display: inline-block;
+            padding-right: 10px;
+        }
+
+        .section-spacing {
+            height: 30px;
+            background: transparent !important;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        /* Tab spacing for procedure steps */
+        .indented {
+            padding-left: 40px;
+        }
+
+        #content > * {
+            position: relative;
+            z-index: 3;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 10px; }
+            #notebook-paper { width: 95%; }
+            #notebook-paper header,
+            #content { padding: 30px 20px; }
+            #notebook-paper header h1 { font-size: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            #notebook-paper header,
+            #content { padding: 30px 15px; }
+            #notebook-paper header h1 { font-size: 18px; }
+            .indented { padding-left: 20px; }
+        }
+
+        @media print {
+            body { padding: 0; }
+            #notebook-paper {
+                width: 100%;
+                max-width: none;
+                box-shadow: none;
+            }
+            .line-background {
+                display: block !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            #content { background: none; }
+        }
+    </style>
+</head>
+<body>
+    <div id="notebook-paper">
+        <div class="line-background"></div>
+        <header>
+            <h1>EXPERIMENT NO:2<br><br>HALF AND FULL ADDER & HALF AND FULL SUBTRACTER</h1>
+        </header>
+        <div id="content">
+            <h2 class="section-title">AIM:</h2>
+            <p>To implement the half adder, full adder, half subtracter and full subtracter circuit using basic gates,</p>
+            <p>universal gates and verify their truth table.</p>
+
+            <div class="section-spacing"></div>
+            <h2 class="section-title">COMPONENTS AND EQUIPMENTS REQUIRED:</h2>
+            <p>IC 7486, 7432, 7400, 7404, 7408, IC trainer kit.</p>
+
+            <div class="section-spacing"></div>
+            <h2 class="section-title">THEORY:</h2>
+            <p>The simplest binary adder is half adder. Half adder has 2 input bits and two output bits. One output</p>
+            <p>bit is the sum and other is carry. They are represented by S and C respectively in their logical symbol.</p>
+
+            <div class="section-spacing"></div>
+            <p>A half adder has no provision to add a carry from lower order bit when binary numbers are added. When 2</p>
+            <p>input bits and a carry to be added, the number of input bits become 3 and input combination increase to</p>
+            <p>8. For this, a full adder is used. Like half adder it also has a sum bit and carry bit. The new carry</p>
+            <p>generated is represented by C and carry generated by C from the previous addition is represented by Cn-1.</p>
+
+            <div class="section-spacing"></div>
+            <p>A logical circuit for the binary subtraction between two single bit binary numbers is known as half</p>
+            <p>subtracter. It consist of 2 input bits and output bits. One output bit is borrow and other output is</p>
+            <p>difference. They represented by B' and D respectively in logic symbols. From the truth table it is clear</p>
+            <p>that the difference output is zero if A=B and 1 if A!=B.</p>
+
+            <div class="section-spacing"></div>
+            <p>The borrow output is 1 when A<B if A<B then the subtraction is done by borrowing 1 from next higher</p>
+            <p>order bit.</p>
+
+            <div class="section-spacing"></div>
+            <p>A logic circuit that can subtract 3 bits at a time is known as full subtracter, the circuit has 3 bits</p>
+            <p>at a time is known as full subtracter, the circuit has 3 bits at a time and 2 outputs. It handles only</p>
+            <p>2 bits at a time and can be used for the largest significant column of subtracter problem. A full</p>
+            <p>subtracter can however take care of higher order column. The output of the full subtracter represented</p>
+            <p>by D and B' which is difference and borrow respectively.</p>
+
+            <div class="section-spacing"></div>
+            <h2 class="section-title">PROCEDURE:</h2>
+            <p>1. Verify whether all components and wires are in good conditions</p>
+            <p>2. Set up the half adder circuit and feed the input combinations</p>
+            <p>3. Observe the output corresponding to input combination and enter it in the truth table</p>
+            <p>4. Repeat the above steps for a full adder</p>
+
+            <div class="section-spacing"></div>
+            <h2 class="section-title">RESULT:</h2>
+            <p>The half adder, full adder, half subtractor, full subtractor circuits are implemented using basic gates</p>
+            <p>and universal gates and their truth table is verified.</p>
+        </div>
+    </div>
+</body>
+</html>

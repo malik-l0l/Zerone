@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Logic Gates Experiment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #f1f1f1;
+            font-family: monospace;
+            font-weight: 200;
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        #notebook-paper {
+            width: 90%;
+            max-width: 960px;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            padding: 0;
+            border-radius: 5px;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2), 0px 0px 6px rgba(0, 0, 0, 0.2);
+            overflow: hidden; /* Ensure content doesn't overflow */
+        }
+
+        /* Content wrapper for background lines */
+        .line-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: linear-gradient(#00b0d7 1px, transparent 1px);
+            background-size: 100% 30px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        #notebook-paper header {
+            position: relative;
+            padding: 30px 40px;
+            background: white;
+            z-index: 2;
+            border-bottom: 1px solid #00b0d7;
+        }
+
+        #notebook-paper header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        #content {
+            position: relative;
+            z-index: 2;
+            padding: 30px 40px;
+            background: linear-gradient(
+                transparent 29px,
+                #00b0d7 29px,
+                #00b0d7 30px,
+                transparent 30px
+            );
+            background-size: 100% 30px;
+            background-position-y: -1px; /* Align with first line */
+        }
+
+        /* Text alignment with lines */
+        #content h2,
+        #content p {
+            line-height: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        #content h2 {
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            text-decoration: underline;
+            display: inline-block; /* Prevent underline from spanning full width */
+            padding-right: 10px; /* Space after underline */
+        }
+
+        .section-spacing {
+            height: 30px;
+            background: transparent !important;
+        }
+
+        /* Strong text styling */
+        strong {
+            font-weight: bold;
+        }
+
+        /* Ensure content sits on lines */
+        #content > * {
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            #notebook-paper {
+                width: 95%;
+            }
+
+            #notebook-paper header,
+            #content {
+                padding: 30px 20px;
+            }
+
+            #notebook-paper header h1 {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #notebook-paper header,
+            #content {
+                padding: 30px 15px;
+            }
+
+            #notebook-paper header h1 {
+                font-size: 18px;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                padding: 0;
+            }
+
+            #notebook-paper {
+                width: 100%;
+                max-width: none;
+                box-shadow: none;
+            }
+
+            .line-background {
+                display: block !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            #content {
+                background: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="notebook-paper">
+        <div class="line-background"></div>
+        <header>
+            <h1>EXPERIMENT NO:1<br><br>REALIZATION OF FUNCTIONS USING BASIC AND UNIVERSAL GATES(SOP AND POS)</h1>
+        </header>
+        <div id="content">
+            <!-- Content remains exactly the same as before -->
+            <h2 class="section-title">AIM:</h2>
+            <p>To familiarize with logic gates IC packages and to notify the truth table of logic gates. Also to</p>
+            <p>familiarize with the digital IC trainer kit.</p>
+
+            <div class="section-spacing"></div>
+            <h2 class="section-title">COMPONENTS AND EQUIPMENTS REQUIRED:</h2>
+            <p>IC 7400,7402,7432,7486 and IC trainer kit</p>
+
+            <div class="section-spacing"></div>
+            <h2 class="section-title">THEORY:</h2>
+            <p><strong>IC trainer kit:</strong> IC trainer kit is an equipment mainly used to test and set up digital circuit</p>
+            <p>while doing experiments. Integrated circuits can be fitted in sockets or bread provided in it. The associated circuits can be set up on the breadboard. There are built-in voltage sources and block signals</p>
+            <p>in it. The frequency of the clock can be selected by turning the knob into different positions. In order to</p>
+            <p>feed monopulses manually, a debouncer switch is also provided. A number of select switches are also provided</p>
+            <p>to obtain 0 or 1 state voltages for digital inputs. Green and red LEDs are provided to represent low and</p>
+            <p>high states respectively to visualize the digital inputs.</p>
+
+            <div class="section-spacing"></div>
+            <p><strong>TROUBLESHOOTING WITH DIGITAL IC:</strong></p>
+            <p>Experiments with digital ICs are rather easy when compared with analogue integrated circuits. Operators</p>
+            <p>must be careful about the connecting wires and pins of IC. In most logic gates, pin no.07 is ground (GND)</p>
+            <p>and pin no.14 is Vcc. But this is not the case with all the digital ICs. There is a chance that the</p>
+            <p>operator may commit a mistake by assuming that pin no.07 and pin no.14 are GND and Vcc</p>
+            <p>respectively for all 14 pin ICs.</p>
+
+            <div class="section-spacing"></div>
+            <h2 class="section-title">LOGIC GATES</h2>
+            <p>In digital electronics, a gate is a logic circuit with one output and one or more inputs. Logic gates</p>
+            <p>are available as ICs.</p>
+
+            <div class="section-spacing"></div>
+            <p><strong>AND GATE:</strong> The AND gate performs logical multiplication, more commonly known as AND operation.</p>
+            <p>The AND gate output will be high only when all the inputs are in high states. 7408 is a digital IC</p>
+            <p>in the TTL family and contains four AND gates.</p>
+
+            <div class="section-spacing"></div>
+            <p><strong>OR GATE:</strong> It performs logical addition; its output will become high if any of the inputs is</p>
+            <p>logically high. 7432 is quad two input OR gates.</p>
+
+            <div class="section-spacing"></div>
+            <p><strong>NOT GATE:</strong> It performs a basic logic function called inversion or complement. The purpose</p>
+            <p>of the inverter is to change one logical level to the opposite level. IC 7404 is a hex inverter.</p>
+
+            <div class="section-spacing"></div>
+            <p><strong>NAND GATE:</strong> A NOT gate following an AND is called NAND or NOT AND. Its output will be low if</p>
+            <p>all the inputs are in high states. 7400 IC is a quad two input NAND gate.</p>
+
+            <div class="section-spacing"></div>
+            <p><strong>NOR GATE:</strong> A NOT gate following an OR gate is called NOR or NOT OR. Its output will be low if</p>
+            <p>any one of its inputs is in a high state. 7402 IC is a quad two input NOR gate.</p>
+
+            <div class="section-spacing"></div>
+            <p><strong>XOR GATE:</strong> Its output will be high if and only if one input is in a high state. 7486 is a quad</p>
+            <p>two input XOR gate.</p>
+
+            <div class="section-spacing"></div>
+            <h2 class="section-title">PROCEDURE:</h2>
+            <p>1. Test all the components and IC packages using a logic digital IC tester. Also, ensure whether all</p>
+            <p>the connecting wires are in good condition. The continuity of wires can be tested using a trainer kit</p>
+            <p>by shorting a 5V supply in the trainer to an LED of the panel. If wires are in good condition, the LED will glow.</p>
+
+            <div class="section-spacing"></div>
+            <p>2. Verify the dual-in-line package (DIP) pinout of the IC before feeding the inputs.</p>
+
+            <div class="section-spacing"></div>
+            <p>3. Set up the circuits and observe the outputs. Enter the input and output states in truth tables</p>
+            <p>corresponding to the input combinations.</p>
+
+            <div class="section-spacing"></div>
+            <h2 class="section-title">RESULT:</h2>
+            <p>Familiarized with the logic gates and verified truth tables. Also familiarized with the IC trainer kit.</p>
+        </div>
+    </div>
+</body>
+</html>
